@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Amu :3</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fffaf0;
+            color: #333;
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff69b4;
+            text-align: center;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        .special-paragraph {
+            font-family: 'cursive;', cursive;
+            font-size: 20px;
+            color: green;
+
+        }
+        hr {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            z-index: 100;
+        }
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(45deg);
+            animation: float 10s linear infinite;
+        }
+        .heart::before, .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-1000px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+        .poems-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            font-family: monospace;
+        }
+        .poem {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts"></div>
+    
+    <h1>Happy Birthday, Amu :3</h1>
+    
+    <p class="special-paragraph">On this special day, I want to remind you of the beautiful journey we've had together and the love that only grows stronger with time. Here are some words straight from my heart.</p>
+    
+    <hr>
+
+    <div class="poems-container">
+        <div class="poem">
+            <h2>Forward and Beyond</h2>
+            <p>
+                In youthful days when hearts were tender,<br>
+                Seventeen you were, and I, a young defender.<br>
+                We forged a bond in innocence and grace,<br>
+                And time has only deepened that embrace.<br><br>
+
+                Your eyes, like stars, still light my restless soul,<br>
+                In your laughter, I find my spirit whole.<br>
+                Each tear you’ve shed, I’ve kissed away with care,<br>
+                For your joy alone, my love, I’ve silently sworn to bear.<br><br>
+
+                Through storms we’ve wandered, hand in hand,<br>
+                Your touch, my guide, as we traversed the land.<br>
+                In every trial, with you, the journey felt light,<br>
+                For your smile, I’d embrace every fight.<br><br>
+
+                Today, on your birthday, my heart whispers its plea,<br>
+                Without you, life’s but a half-told story.<br>
+                Each moment, your memory brightens my world anew,<br>
+                Without you, this heart’s adrift, life’s hue is askew.<br>
+            </p>
+        </div>
+
+        <div class="poem">
+            <h2>Koshish</h2>
+            <p>
+                Satrah saal ka hua safar, the tum satrah ke jab hum mile<br>
+                Beet gaye kitne manzar, banate rahe yadoon ke silsile.<br>
+                Tere bina sab kuchh, ek adhoora sa hai fasana,<br>
+                Tujhse har baar, mila hai kuch karne ka bahaana!<br><br>
+
+                Teri aankhon mein basa, mere sapnon ka jahaan,<br>
+                Tera har aansoo, hai meri hasti par ilzaam<br>
+                Tere gham ki har lehar, mere har zarre ko hai mehsoos,<br>
+                Teri har khwahison ko ab, rakhunga mehfooz !!<br><br>
+
+                Zindagi ke safar par, jab raaste the mushkil,<br>
+                Tera saath hi tha, jo mili har mushkil ko manzil.<br>
+                Teri muskurahat se paaya, mere har dard ne araam,<br>
+                Tumne diya hai, meri har koshish ko anjaam,<br>
+                Meri har intehan ko inaam, meri uljhano ka samadhaan!!<br><br>
+
+                Aaj tumhare janmdin par, dil umeedon se hai bhara,<br>
+                Tere sang ye jeewan, tere har pal ka hai sahara<br>
+                Tere saath har lamha, tere har lamhe ka saath <br>
+                Karte hain aaj, ek naye safar ka Aagaaz !!<br>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function createHeart() {
+            if (document.querySelectorAll('.heart').length < 2) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDuration = Math.random() * 2 + 8 + 's';
+                document.body.appendChild(heart);
+                setTimeout(() => {
+                    heart.remove();
+                }, 10000);
+            }
+        }
+
+        setInterval(createHeart, 300);
+        setTimeout(() => {
+            clearInterval(createHeart);
+        }, 10000);
+    </script>
+</body>
+</html>
